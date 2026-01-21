@@ -190,39 +190,57 @@ ExpenseTracker/
    - Frontend: http://localhost:5173
    - Backend API: http://localhost:5000
 
+
 ## 📡 API Documentation
 
 ### Authentication Endpoints
 
 | Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/auth/register` | Register a new user |
-| POST | `/api/auth/login` | Login user |
-| GET | `/api/auth/profile` | Get user profile |
+|--------|--------------------------|-----------------------------|
+| POST   | `/api/v1/auth/register`  | Register a new user         |
+| POST   | `/api/v1/auth/login`     | Login user                  |
+| GET    | `/api/v1/auth/user`      | Get user profile (protected)|
+| POST   | `/api/v1/auth/upload-image` | Upload profile image      |
 
 ### Income Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/income` | Get all income entries |
-| POST | `/api/income` | Create new income |
-| PUT | `/api/income/:id` | Update income entry |
-| DELETE | `/api/income/:id` | Delete income entry |
+| Method | Endpoint                | Description                 |
+|--------|-------------------------|-----------------------------|
+| GET    | `/api/v1/incomes`       | Get all income entries      |
+| POST   | `/api/v1/incomes`       | Create new income           |
+| DELETE | `/api/v1/incomes/:id`   | Delete income entry         |
+| GET    | `/api/v1/incomes/download/excel` | Download income as Excel |
 
 ### Expense Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/expense` | Get all expenses |
-| POST | `/api/expense` | Create new expense |
-| PUT | `/api/expense/:id` | Update expense |
-| DELETE | `/api/expense/:id` | Delete expense |
+| Method | Endpoint                | Description                 |
+|--------|-------------------------|-----------------------------|
+| GET    | `/api/v1/expenses`      | Get all expenses            |
+| POST   | `/api/v1/expenses`      | Create new expense          |
+| DELETE | `/api/v1/expenses/:id`  | Delete expense              |
+| GET    | `/api/v1/expenses/download/excel` | Download expenses as Excel |
 
-### Dashboard Endpoints
+### Dashboard Endpoint
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/dashboard/stats` | Get dashboard statistics |
+| Method | Endpoint           | Description                  |
+|--------|--------------------|------------------------------|
+| GET    | `/api/v1/dashboard`| Get dashboard statistics     |
+
+## 🧪 API Testing
+
+You can test the backend API using the provided `test-auth.http` file (with the REST Client VS Code extension) or the `run-tests.ps1` PowerShell script in the backend folder:
+
+```bash
+cd backend
+./run-tests.ps1
+```
+
+This script will:
+- Register and log in a user
+- Test all protected endpoints (income, expense, dashboard)
+- Print results for each API call
+
+---
 
 ## 🎨 Frontend Architecture
 
