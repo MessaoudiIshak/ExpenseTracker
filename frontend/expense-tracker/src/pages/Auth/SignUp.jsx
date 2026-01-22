@@ -6,6 +6,12 @@ import ProfilePhotoSelector from '../../components/Inputs/ProfilePhotoSelector';
 import { Link } from 'react-router-dom';
 import { validateEmail } from '../../utils/helper.js';
 import { useNavigate } from 'react-router-dom';
+import { API_PATHS } from '../../utils/apiPaths.js';
+import axiosInstance from '../../utils/axiosInstance.js';
+import {useContext} from 'react';
+import { UserContext } from '../../context/userContext.jsx';
+import uploadImage from '../../utils/uploadImage.js';
+
 export default function SignUp() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -13,6 +19,8 @@ export default function SignUp() {
   const [fullName, setFullName] = useState('');
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  const { updateUser } = useContext(UserContext);
+
   const handleSignUp = async (e) => {
     e.preventDefault();
     let profileImageUrl = '';
@@ -28,7 +36,32 @@ export default function SignUp() {
       setError('Password must be at least 8 characters long');
       return;
     }
-    // api call to upload profile picture if exists
+    try {
+      if (profilePic) {
+        const imgUpLoadRes = await uploadImage(profilePic);
+        profileImageUrl = imgUpLoadRes.imageUrl || '';
+      }
+
+      const respone = await axiosInstance.post(API_PATHS.AUTH.REGISTER, {
+        fullName,
+        email,
+        password,
+        profileImageUrl
+      });
+      const { token, user } = respone.data;
+      if (token) {
+        localStorage.setItem('token', token);
+        updateUser(user);
+        navigate('/dashboard');
+      }}
+      catch (err) {
+        if (err.response && err.response.data.message) {
+          setError(err.response.data.message);
+        }
+        else {
+          setError('An error occurred. Please try again.');
+        }
+      }
   };
   return (
     <AuthLayout>

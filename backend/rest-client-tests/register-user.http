@@ -1,0 +1,19 @@
+### Register a new user
+POST http://localhost:8000/api/v1/auth/register
+Content-Type: application/json
+
+{
+  "fullName": "Rest Client User",
+  "email": "restclientuser@example.com",
+  "password": "testpassword123"
+}
+
+### (Optional) Login with the new user
+# Uncomment and set the email/password to test login
+# POST http://localhost:8000/api/v1/auth/login
+# Content-Type: application/json
+#
+# {
+#   "email": "restclientuser@example.com",
+#   "password": "testpassword123"
+# }
