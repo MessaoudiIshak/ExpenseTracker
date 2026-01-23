@@ -1,3 +1,38 @@
+@layer utilities {
+  .animate-float-slow {
+    animation: floatY 7s ease-in-out infinite alternate;
+  }
+  .animate-float-medium {
+    animation: floatY 4.5s ease-in-out infinite alternate;
+  }
+  .animate-float-fast {
+    animation: floatY 2.5s ease-in-out infinite alternate;
+  }
+  .animate-coin-spin {
+    animation: coinSpin 4s linear infinite;
+  }
+  .animate-coin-spin-slow {
+    animation: coinSpin 8s linear infinite;
+  }
+  .animate-bill-float {
+    animation: billFloat 6s ease-in-out infinite alternate;
+  }
+  .animate-bill-float-slow {
+    animation: billFloat 10s ease-in-out infinite alternate;
+  }
+  @keyframes floatY {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-32px); }
+  }
+  @keyframes coinSpin {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+  }
+  @keyframes billFloat {
+    0% { transform: translateY(0) rotate(-2deg); }
+    100% { transform: translateY(-40px) rotate(6deg); }
+  }
+}
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import "tailwindcss";
 
@@ -5,6 +40,25 @@
   --font-display: 'Poppins', sans-serif;
   --breakpoint-3xl  : 1920px;
   --color-primary : #875cf5;
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.7s cubic-bezier(0.4,0,0.2,1) both;
+  }
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(24px) scale(0.98); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .card {
+    @apply transition-shadow duration-300 hover:shadow-xl hover:shadow-purple-200/40;
+  }
+  .card-btn {
+    @apply transition-colors duration-200 hover:bg-purple-100 hover:text-purple-700;
+  }
+  .add-btn, .add-btn-fill {
+    @apply transition-all duration-200 hover:scale-105 hover:shadow-md;
+  }
 }
 @layer base {
   html {
@@ -23,4 +77,17 @@
 .btn-primary{
   
   @apply w-full text-sm font-medium text-white bg-violet-500 shadow-lg shadow-purple-600/5 p-[10px] rounded-md my-1 hover:bg-purple-600/15 hover:text-purple-600 transition duration-300 ease-in-out;
+}
+.card{
+  @apply bg-white p-6 rounded-2xl shadow-md shadow-gray-100 border border-gray-200/50;
+
+}
+.card-btn{
+  @apply flex items-center gap-3  text-[12px] font-medium text-gray-700 hover:text-purple-500 bg-gray-50 hover:bg-purple-50 px-4 py-1 rounded-lg border border-gray-200/50 cursor-pointer ;
+}
+.add-btn{
+  @apply flex items-center gap-1.5 text-xs md:text-sm font-medium text-purple-600 text-shadow-purple-600 whitespace-nowrap bg-purple-50 border border-purple-100 rounded-lg px-4 py-2 cursor-pointer; 
+}
+.add-btn-fill {
+  @apply text-white bg-primary;
 }

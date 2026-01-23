@@ -10,7 +10,7 @@ export default function Input({value, onChange, type , placeholder, label}) {
     <div >
         <label className='text-[13px] text-slate-800'>{label}</label>
         <div className='input-box'>
-            <input type={type == 'password' && !showPassword ? 'password' : 'text'} 
+            <input type={type} 
             value={value} 
             className='w-full bg-transparent outline-none'
             onChange={(e) => onChange(e)}

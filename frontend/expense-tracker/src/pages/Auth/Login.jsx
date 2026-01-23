@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { API_PATHS } from '../../utils/apiPaths.js';
 import axiosInstance from '../../utils/axiosInstance.js';
 import { useContext } from 'react';
-import { UserContext } from '../../context/userContext.jsx';
+import { UserContext } from '../../context/UserContext.jsx';
 
 export default function Login() {
 const  [email, setEmail] = useState('');

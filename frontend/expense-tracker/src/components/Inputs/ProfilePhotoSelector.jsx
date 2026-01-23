@@ -18,9 +18,6 @@ export default function ProfilePhotoSelector({ image, setImage }) {
         setImage(null);
         setPreviewUrl(null);
     };
-    const onChooseFile = () => {
-        inputRef.current.click();
-    };
 
   return (
     <div className='flex justify-center mb-6'>
@@ -35,7 +32,7 @@ export default function ProfilePhotoSelector({ image, setImage }) {
             <div className='w-20 h-20 flex items-center justify-center bg-purple-100 rounded-full relative group hover:bg-purple-200 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg'>
                 <LuUser className='text-4xl text-primary transition-transform duration-300 group-hover:scale-110' />
                 <button type='button' 
-                onClick={onChooseFile}
+                onClick={handleImageRemove}
                 className='w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full absolute -bottom-1 -right-1 cursor-pointer transition-all duration-300 ease-in-out hover:bg-purple-700 hover:scale-110 hover:shadow-md hover:rotate-12 active:scale-95'>
                     <LuUpload className='transition-transform duration-200' />
                 </button>

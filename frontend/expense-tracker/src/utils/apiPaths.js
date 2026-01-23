@@ -9,13 +9,13 @@ export const API_PATHS = {
         GET_ALL: `${BASE_URL}/incomes`,
         ADD: `${BASE_URL}/incomes`,
         DELETE: (id) => `${BASE_URL}/incomes/${id}`,
-        DOWNLOAD_EXCEL: `${BASE_URL}/incomes/download-excel`,
+        DOWNLOAD_EXCEL: `${BASE_URL}/incomes/download/excel`,
     },
     EXPENSES: {
         GET_ALL: `${BASE_URL}/expenses`,
         ADD: `${BASE_URL}/expenses`,
         DELETE: (id) => `${BASE_URL}/expenses/${id}`,
-        DOWNLOAD_EXCEL: `${BASE_URL}/expenses/download-excel`,
+        DOWNLOAD_EXCEL: `${BASE_URL}/expenses/download/excel`,
     },
     DASHBOARD: {
         DATA: `${BASE_URL}/dashboard`,

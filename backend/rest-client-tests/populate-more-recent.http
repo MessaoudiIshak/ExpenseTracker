@@ -1,0 +1,43 @@
+### Add more expenses for recent transactions
+POST http://localhost:8000/api/v1/expenses
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NzIzOWE3NzU0NjU1YjRiYWVjMjRmNiIsImlhdCI6MTc2OTEwMTExMCwiZXhwIjoxNzcxNjkzMTEwfQ.DOsbkvd6t8kZkrUtTFkS78x1IqzFZUAfmeXv14uxqWc
+Content-Type: application/json
+
+{
+    "amount": 50,
+    "category": "Books",
+    "date": "2026-01-22T11:00:00.000Z"
+}
+
+### Add another expense
+POST http://localhost:8000/api/v1/expenses
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NzIzOWE3NzU0NjU1YjRiYWVjMjRmNiIsImlhdCI6MTc2OTEwMTExMCwiZXhwIjoxNzcxNjkzMTEwfQ.DOsbkvd6t8kZkrUtTFkS78x1IqzFZUAfmeXv14uxqWc
+Content-Type: application/json
+
+{
+    "amount": 60,
+    "category": "Coffee",
+    "date": "2026-01-22T12:00:00.000Z"
+}
+
+### Add more incomes for recent transactions
+POST http://localhost:8000/api/v1/incomes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NzIzOWE3NzU0NjU1YjRiYWVjMjRmNiIsImlhdCI6MTc2OTEwMTExMCwiZXhwIjoxNzcxNjkzMTEwfQ.DOsbkvd6t8kZkrUtTFkS78x1IqzFZUAfmeXv14uxqWc
+Content-Type: application/json
+
+{
+    "amount": 100,
+    "source": "Bonus",
+    "date": "2026-01-22T13:00:00.000Z"
+}
+
+### Add another income
+POST http://localhost:8000/api/v1/incomes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NzIzOWE3NzU0NjU1YjRiYWVjMjRmNiIsImlhdCI6MTc2OTEwMTExMCwiZXhwIjoxNzcxNjkzMTEwfQ.DOsbkvd6t8kZkrUtTFkS78x1IqzFZUAfmeXv14uxqWc
+Content-Type: application/json
+
+{
+    "amount": 250,
+    "source": "Investment",
+    "date": "2026-01-22T14:00:00.000Z"
+}

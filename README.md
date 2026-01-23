@@ -1,10 +1,13 @@
-# 💰 Expense Tracker
 
-A full-stack expense tracking application built with React and Node.js that helps users manage their income and expenses efficiently.
+# 💸 Expense Tracker
+
+Expense Tracker is a full-stack, modern web application for tracking your income and expenses. It features a beautiful, responsive UI with smooth animations, interactive charts, and a secure backend. Built with React (Vite + Tailwind CSS) and Node.js/Express, it helps you visualize and manage your finances with ease.
 
 ![License](https://img.shields.io/badge/license-ISC-blue.svg)
 ![Node](https://img.shields.io/badge/node-%3E%3D18.0.0-green.svg)
 ![React](https://img.shields.io/badge/react-19.2.0-61dafb.svg)
+
+---
 
 ## 📋 Table of Contents
 
@@ -19,60 +22,49 @@ A full-stack expense tracking application built with React and Node.js that help
 - [Environment Variables](#environment-variables)
 - [Contributing](#contributing)
 
+---
+
 ## 🎯 Overview
 
-Expense Tracker is a modern web application designed to help users track their financial activities. Users can register, log in, and manage their income and expenses through an intuitive dashboard interface.
+Expense Tracker lets you:
+- Register and log in securely (with profile photo upload)
+- Add, edit, and delete income and expenses
+- Visualize your finances with interactive charts
+- Export your data to Excel
+- Enjoy a fast, mobile-friendly, and animated UI
 
 ## ✨ Features
 
-- **User Authentication**
-  - Secure signup with profile photo upload
-  - Login with email and password
-  - JWT-based authentication
-  - Password visibility toggle
+- **Authentication**: Secure signup/login, JWT, profile photo
+- **Dashboard**: Animated cards, charts, and real-time stats
+- **Income/Expense Management**: Add, delete, categorize, and export
+- **Modern UI**: Responsive, animated, and theme-consistent
+- **API**: RESTful endpoints for all core features
 
-- **Dashboard**
-  - Overview of income and expenses
-  - Visual statistics and charts
-  - Real-time data updates
 
-- **Income Management**
-  - Add, edit, and delete income entries
-  - Categorize income sources
-
-- **Expense Management**
-  - Track daily expenses
-  - Categorize expenses
-  - Export data to Excel
 
 ## 🛠 Tech Stack
 
-### Frontend
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| React | 19.2.0 | UI Library |
-| Vite | 7.2.4 | Build Tool |
-| Tailwind CSS | 4.1.18 | Styling |
-| React Router DOM | 7.12.0 | Routing |
-| Axios | 1.13.2 | HTTP Client |
-| Recharts | 3.6.0 | Charts & Visualization |
-| React Icons | 5.5.0 | Icon Library |
-| React Hot Toast | 2.6.0 | Notifications |
-| Moment.js | 2.30.1 | Date Formatting |
-| Emoji Picker React | 4.16.1 | Emoji Selection |
+**Frontend:**
+- React 19 (Vite)
+- Tailwind CSS
+- React Router DOM
+- Axios
+- Recharts (charts)
+- React Icons
+- React Hot Toast
+- Moment.js
+- Emoji Picker React
 
-### Backend
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| Node.js | - | Runtime Environment |
-| Express | 5.2.1 | Web Framework |
-| MongoDB (Mongoose) | - | Database |
-| JWT | 9.0.3 | Authentication |
-| bcryptjs | 3.0.3 | Password Hashing |
-| Multer | 2.0.2 | File Upload |
-| XLSX | 0.18.5 | Excel Export |
-| CORS | 2.8.5 | Cross-Origin Requests |
-| dotenv | 17.2.3 | Environment Variables |
+**Backend:**
+- Node.js + Express
+- MongoDB (Mongoose)
+- JWT, bcryptjs
+- Multer (file upload)
+- XLSX (Excel export)
+- CORS, dotenv
+
+
 
 ## 📁 Project Structure
 
@@ -100,37 +92,23 @@ ExpenseTracker/
 │
 └── frontend/
     └── expense-tracker/        # React Frontend
-        ├── public/             # Static assets
-        ├── src/
-        │   ├── assets/         # Images, fonts, etc.
-        │   ├── components/
-        │   │   ├── Inputs/
-        │   │   │   ├── Input.jsx              # Reusable input component
-        │   │   │   └── ProfilePhotoSelector.jsx # Profile image upload
-        │   │   └── layouts/
-        │   │       └── AuthLayout.jsx         # Authentication page layout
-        │   ├── context/        # React Context providers
-        │   ├── hooks/          # Custom React hooks
-        │   ├── pages/
-        │   │   ├── Auth/
-        │   │   │   ├── Login.jsx    # Login page
-        │   │   │   └── SignUp.jsx   # Registration page
-        │   │   └── Dashboard/
-        │   │       ├── Home.jsx     # Dashboard home
-        │   │       ├── Income.jsx   # Income management
-        │   │       └── Expense.jsx  # Expense management
-        │   ├── utils/
-        │   │   ├── apiPaths.js      # API endpoint definitions
-        │   │   ├── data.js          # Static data/constants
-        │   │   └── helper.js        # Utility functions
-        │   ├── App.jsx         # Main app component with routing
-        │   ├── main.jsx        # React entry point
-        │   └── index.css       # Global styles & Tailwind config
-        ├── index.html
-        ├── vite.config.js
-        ├── eslint.config.js
-        └── package.json
+      ├── public/             # Static assets
+      ├── src/
+      │   ├── assets/         # Images, fonts, etc.
+      │   ├── components/     # All UI components (cards, layouts, charts, etc.)
+      │   ├── context/        # React Context providers
+      │   ├── hooks/          # Custom React hooks
+      │   ├── pages/          # Auth & dashboard pages
+      │   ├── utils/          # API paths, helpers, constants
+      │   ├── App.jsx         # Main app component with routing
+      │   ├── main.jsx        # React entry point
+      │   └── index.css       # Global styles & Tailwind config
+      ├── index.html
+      ├── vite.config.js
+      ├── eslint.config.js
+      └── package.json
 ```
+
 
 ## 🚀 Getting Started
 
@@ -228,7 +206,8 @@ ExpenseTracker/
 
 ## 🧪 API Testing
 
-You can test the backend API using the provided `test-auth.http` file (with the REST Client VS Code extension) or the `run-tests.ps1` PowerShell script in the backend folder:
+
+You can test the backend API using the provided `.http` files in `rest-client-tests/` (with the REST Client VS Code extension) or the `run-tests.ps1` PowerShell script in the backend folder:
 
 ```bash
 cd backend
@@ -241,6 +220,7 @@ This script will:
 - Print results for each API call
 
 ---
+
 
 ## 🎨 Frontend Architecture
 
@@ -271,17 +251,15 @@ App
 | `/expense` | Expense | Expense management |
 | `/income` | Income | Income management |
 
-### Styling
 
-The application uses **Tailwind CSS** with custom configuration:
+### Styling & Animations
 
+- **Tailwind CSS** with custom configuration
 - **Primary Color**: `#875cf5` (Purple)
 - **Font Family**: Poppins
 - **Background**: `#fcfbfc`
+- **Modern Animations**: Cards, buttons, and backgrounds feature smooth transitions and money-themed effects
 
-Custom CSS classes defined in `index.css`:
-- `.input-box` - Styled input container
-- `.btn-primary` - Primary button styling with hover effects
 
 ## 🔧 Backend Architecture
 
@@ -302,6 +280,7 @@ The Express server (`server.js`) includes:
 - **Income**: Income entries with amount, category, date
 - **Expense**: Expense entries with amount, category, date
 
+
 ## 🔐 Environment Variables
 
 ### Backend (.env)
@@ -312,6 +291,7 @@ The Express server (`server.js`) includes:
 | `CLIENT_URL` | Frontend URL for CORS | http://localhost:3000 |
 | `MONGODB_URI` | MongoDB connection string | - |
 | `JWT_SECRET` | Secret key for JWT tokens | - |
+
 
 ## 📝 Scripts
 
@@ -329,6 +309,7 @@ npm run preview  # Preview production build
 npm run lint     # Run ESLint
 ```
 
+
 ## 🤝 Contributing
 
 1. Fork the repository
@@ -337,9 +318,11 @@ npm run lint     # Run ESLint
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+
 ## 📄 License
 
 This project is licensed under the ISC License.
+
 
 ## 👤 Author
 

@@ -1,0 +1,54 @@
+### Add income for January 1, 2026
+POST http://localhost:8000/api/v1/incomes
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NzIzOWE3NzU0NjU1YjRiYWVjMjRmNiIsImlhdCI6MTc2OTEyNDI3NSwiZXhwIjoxNzcxNzE2Mjc1fQ.DSu6s5HLrXeHiJ8TfQ6nTeotoq2-FMa2oTgzy0aKgKI
+
+{
+    "amount": 100,
+    "source": "Freelance",
+    "date": "2026-01-01T10:00:00.000Z"
+}
+
+### Add income for January 2, 2026
+POST http://localhost:8000/api/v1/incomes
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NzIzOWE3NzU0NjU1YjRiYWVjMjRmNiIsImlhdCI6MTc2OTEyNDI3NSwiZXhwIjoxNzcxNzE2Mjc1fQ.DSu6s5HLrXeHiJ8TfQ6nTeotoq2-FMa2oTgzy0aKgKI
+
+{
+    "amount": 200,
+    "source": "Salary",
+    "date": "2026-01-02T10:00:00.000Z"
+}
+
+### Add income for January 3, 2026
+POST http://localhost:8000/api/v1/incomes
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NzIzOWE3NzU0NjU1YjRiYWVjMjRmNiIsImlhdCI6MTc2OTEyNDI3NSwiZXhwIjoxNzcxNzE2Mjc1fQ.DSu6s5HLrXeHiJ8TfQ6nTeotoq2-FMa2oTgzy0aKgKI
+
+{
+    "amount": 150,
+    "source": "Investment",
+    "date": "2026-01-03T10:00:00.000Z"
+}
+
+### Add income for January 4, 2026
+POST http://localhost:8000/api/v1/incomes
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NzIzOWE3NzU0NjU1YjRiYWVjMjRmNiIsImlhdCI6MTc2OTEyNDI3NSwiZXhwIjoxNzcxNzE2Mjc1fQ.DSu6s5HLrXeHiJ8TfQ6nTeotoq2-FMa2oTgzy0aKgKI
+
+{
+    "amount": 250,
+    "source": "Bonus",
+    "date": "2026-01-04T10:00:00.000Z"
+}
+
+### Add income for January 5, 2026
+POST http://localhost:8000/api/v1/incomes
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NzIzOWE3NzU0NjU1YjRiYWVjMjRmNiIsImlhdCI6MTc2OTEyNDI3NSwiZXhwIjoxNzcxNzE2Mjc1fQ.DSu6s5HLrXeHiJ8TfQ6nTeotoq2-FMa2oTgzy0aKgKI
+
+{
+    "amount": 300,
+    "source": "Gift",
+    "date": "2026-01-05T10:00:00.000Z"
+}

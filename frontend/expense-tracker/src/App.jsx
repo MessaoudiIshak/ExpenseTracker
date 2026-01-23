@@ -4,9 +4,13 @@ import Login from './pages/Auth/Login.jsx'
 import SignUp from './pages/Auth/SignUp.jsx'
 import Home from './pages/Dashboard/Home.jsx'
 import Expense from './pages/Dashboard/Expense.jsx'
-import UserProvider from './context/userContext.jsx'
-import Dashboard from './pages/Dashboard/Dashboard.jsx'
+import UserProvider from './context/UserContextProvider.jsx'
+import Income from './pages/Dashboard/Income.jsx'
+import { Toaster } from 'react-hot-toast'
+
+
 export default function App() {
+  
   return (
     
     <UserProvider>
@@ -15,11 +19,17 @@ export default function App() {
           <Route path='/' element={<Root />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
-          <Route path='/home' element={<Home />} />
+          <Route path='/dashboard' element={<Home />} />
           <Route path='/expense' element={<Expense />} />
-          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/income' element={<Income />} />
         </Routes>
       </BrowserRouter>
+        <Toaster
+          toastOptions={{
+            className: "",
+            style: { fontSize: "13px" }
+          }}
+        />
       </UserProvider>
    
   )

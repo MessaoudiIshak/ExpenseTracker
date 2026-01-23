@@ -45,11 +45,11 @@ exports.deleteExpense = async (req, res) => {
     const userId = req.user.id;
     const expenseId = req.params.id;
     try {
-        const expense = await Expense.findOne({ _id: expenseId, user: userId });
+        const expense = await Expense.findOne({ _id: expenseId, userId: userId });
         if (!expense) {
             return res.status(404).json({ message: "Expense not found" });
         }
-        await expense.remove();
+        await expense.deleteOne();
         res.status(200).json({ message: "Expense deleted successfully" });
     } catch (error) {
         console.error("Error deleting expense:", error);
@@ -62,18 +62,20 @@ exports.downloadExpenseExcel = async (req, res) => {
     }
     const userId = req.user.id;
     try {
-        const expenses = await Expense.find({ user: userId }).sort({ date: -1 });
-        const  data = expenses.map(expense => ({
+        const expenses = await Expense.find({ userId: userId }).sort({ date: -1 });
+        const data = expenses.map(expense => ({
             Amount: expense.amount,
             Icon: expense.icon,
-            Source: expense.source,
+            Category: expense.category,
             Date: expense.date.toISOString().split('T')[0]
         }));
         const wb = XLSX.utils.book_new();
         const ws = XLSX.utils.json_to_sheet(data);
         XLSX.utils.book_append_sheet(wb, ws, "Expenses");
-        XLSX.writeFile(wb, "expenses_details.xlsx");
-        res.download("expenses_details.xlsx");
+        const buffer = XLSX.write(wb, { type: 'buffer', bookType: 'xlsx' });
+        res.setHeader('Content-Disposition', 'attachment; filename="expenses_details.xlsx"');
+        res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        res.send(buffer);
     } catch (error) {
         console.error("Error downloading expense Excel:", error);
         res.status(500).json({ message: "Server Error" });
