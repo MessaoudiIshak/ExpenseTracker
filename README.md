@@ -7,6 +7,12 @@ Expense Tracker is a full-stack, modern web application for tracking your income
 ![Node](https://img.shields.io/badge/node-%3E%3D18.0.0-green.svg)
 ![React](https://img.shields.io/badge/react-19.2.0-61dafb.svg)
 
+## 🌐 Live Demo
+
+🚀 **[View Live App](https://my-expense-tracker-theta-three.vercel.app)**
+
+Experience the app in action! Register, add transactions, and explore the dashboard.
+
 ---
 
 ## 📋 Table of Contents
@@ -16,6 +22,7 @@ Expense Tracker is a full-stack, modern web application for tracking your income
 - [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
+- [Deployment](#deployment)
 - [API Documentation](#api-documentation)
 - [Frontend Architecture](#frontend-architecture)
 - [Backend Architecture](#backend-architecture)
@@ -28,10 +35,12 @@ Expense Tracker is a full-stack, modern web application for tracking your income
 
 Expense Tracker lets you:
 - Register and log in securely (with profile photo upload)
-- Add, edit, and delete income and expenses
-- Visualize your finances with interactive charts
-- Export your data to Excel
-- Enjoy a fast, mobile-friendly, and animated UI
+- Add, edit, and delete income and expenses with categories
+- Visualize your finances with interactive charts (bar, line, pie)
+- Export your data to Excel for offline analysis
+- Enjoy a fast, mobile-friendly UI with smooth animations and a modern design
+
+Perfect for personal finance management, budgeting, and tracking spending habits.
 
 ## ✨ Features
 
@@ -167,6 +176,25 @@ ExpenseTracker/
 3. **Access the Application**
    - Frontend: http://localhost:5173
    - Backend API: http://localhost:5000
+
+## 🚀 Deployment
+
+The app is fully deployed and ready to use! For detailed deployment steps, see [DEPLOYMENT.md](./DEPLOYMENT.md).
+
+### Quick Deploy Summary
+- **Backend**: Hosted on Render (Node.js + MongoDB Atlas)
+- **Frontend**: Hosted on Vercel (React SPA)
+- **Database**: MongoDB Atlas (cloud-hosted)
+- **Live URLs**:
+  - Frontend: https://my-expense-tracker-theta-three.vercel.app
+  - Backend API: https://expense-tracker-backend-x1vj.onrender.com
+
+### Deployment Platforms
+- **Render**: Free tier for backend (auto-sleeps after inactivity)
+- **Vercel**: Free tier for frontend
+- **MongoDB Atlas**: Free tier for database
+
+To deploy your own instance, follow the guide in `DEPLOYMENT.md`.
 
 
 ## 📡 API Documentation
@@ -318,11 +346,16 @@ npm run lint     # Run ESLint
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+## 🙏 Acknowledgments
+
+- Built with ❤️ using modern web technologies
+- Icons from React Icons
+- Charts powered by Recharts
+- UI inspired by financial apps for intuitive design
 
 ## 📄 License
 
 This project is licensed under the ISC License.
-
 
 ## 👤 Author
 
