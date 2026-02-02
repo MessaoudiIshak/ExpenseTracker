@@ -22,7 +22,6 @@ export default function App() {
           <Route path='/dashboard' element={<Home />} />
           <Route path='/expense' element={<Expense />} />
           <Route path='/income' element={<Income />} />
-          <Route path='/logout' element={<Logout />} />
         </Routes>
       </BrowserRouter>
         <Toaster
@@ -38,10 +37,4 @@ export default function App() {
 function Root() {
   const isAuthenticated = !!localStorage.getItem('token')
   return isAuthenticated ? <Navigate to="/dashboard" /> : <Navigate to="/login" />
-}
-
-function Logout() {
-  localStorage.clear();
-  window.location.href = '/login'; // Force reload to clear context
-  return null;
 }
