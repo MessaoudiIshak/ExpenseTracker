@@ -102,19 +102,21 @@ export default function Income() {
 
   return (
     <DashboardLayout activeMenu="Income">
-      <div className='my-5 mx-auto'>
-        <div className='grid grid-cols-1 gap-6'>
-          <div className=''>
+      <div className='w-full py-3 sm:py-5 px-2 sm:px-3 md:px-6 lg:px-8'>
+        <div className='grid grid-cols-1 gap-4 sm:gap-6 w-full'>
+          <div className='w-full'>
             <IncomeOverview
               transactions={incomeData}
               onAddIncome={() => setOpenAddIncomeModal(true)}
             />
           </div>
-          <IncomeList
-            transactions={incomeData}
-            onDelete={(id)=>setOpenDeleteAlert({show : true, data:id})}
-            onDownload={handleDownloadIncomeDetails}
-          />
+          <div className='w-full'>
+            <IncomeList
+              transactions={incomeData}
+              onDelete={(id)=>setOpenDeleteAlert({show : true, data:id})}
+              onDownload={handleDownloadIncomeDetails}
+            />
+          </div>
         </div>
         <Modal isOpen={openAddIncomeModal}
           onClose={() => setOpenAddIncomeModal(false)}

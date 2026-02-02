@@ -12,7 +12,7 @@ export default function AddExpenseForm({ onAddExpense }) {
     });
     const handleChange = (key , value) => setExpense({...expense, [key]: value});
   return (
-    <div>
+    <div className='w-full'>
                 <EmojiPickerPopup 
                     icon={expense.icon}
                     onSelect={(SelectedIcon) => handleChange('icon', SelectedIcon)}
@@ -38,10 +38,10 @@ export default function AddExpenseForm({ onAddExpense }) {
         placeholder=''
         type='date'
         />
-        <div className='flex justify-end mt-6'>
+        <div className='flex justify-end mt-4 sm:mt-6'>
             <button
             type='button'
-            className='add-btn add-btn-fill'
+            className='add-btn add-btn-fill text-xs sm:text-sm'
             onClick={()=>onAddExpense(expense)} >
                 Add Expense
             </button>

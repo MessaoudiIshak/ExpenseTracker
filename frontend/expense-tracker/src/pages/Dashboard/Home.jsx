@@ -44,15 +44,15 @@ export default function Home() {
     }, []);
   return (
     <DashboardLayout activeMenu="Dashboard">
-      <div className="my-5 mx-auto w-full px-2 md:px-8">
+      <div className="w-full py-3 sm:py-5 px-2 sm:px-3 md:px-6 lg:px-8 max-w-full">
         {loading ? (
           <div className="flex flex-col items-center justify-center min-h-[40vh] animate-fade-in">
-            <div className="w-16 h-16 border-4 border-violet-400 border-t-transparent rounded-full animate-spin mb-4"></div>
-            <span className="text-violet-500 font-semibold text-lg">Loading dashboard...</span>
+            <div className="w-12 sm:w-16 h-12 sm:h-16 border-4 border-violet-400 border-t-transparent rounded-full animate-spin mb-3 sm:mb-4"></div>
+            <span className="text-violet-500 font-semibold text-base sm:text-lg">Loading dashboard...</span>
           </div>
         ) : (
-          <div className="animate-fade-in">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="animate-fade-in w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 w-full">
               <InfoCard
                 label="Total Balance"
                 icon={<IoMdCard />}
@@ -72,38 +72,38 @@ export default function Home() {
                 value={addThousandSeparators(dashbaordData?.totalExpense || 0)}
               />
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-              <div className="transition-transform duration-500 hover:scale-[1.02]">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4 md:gap-6 mt-4 sm:mt-6 w-full">
+              <div className="w-full transition-transform duration-500 hover:scale-[1.02]">
                 <RecentTransactions 
                   transactions={dashbaordData?.recentTransactions}
                   onSeeMore={() => navigate('/expense')} 
                 />
               </div>
-              <div className="transition-transform duration-500 hover:scale-[1.02]">
+              <div className="w-full transition-transform duration-500 hover:scale-[1.02]">
                 <FinanceOverview
                   totalBalance={dashbaordData?.totalBalance || 0}
                   totalIncome={dashbaordData?.totalIncome || 0}
                   totalExpense={dashbaordData?.totalExpense || 0}
                 />
               </div>
-              <div className="transition-transform duration-500 hover:scale-[1.02]">
+              <div className="w-full transition-transform duration-500 hover:scale-[1.02]">
                 <ExpenseTransactions
                   transactions={dashbaordData?.last30DaysExpenses?.transactions || []}
                   onSeeMore={() => navigate('/expense')}
                 />
               </div>
-              <div className="transition-transform duration-500 hover:scale-[1.02]">
+              <div className="w-full transition-transform duration-500 hover:scale-[1.02]">
                 <Last30DaysExpenses
                   data={dashbaordData?.last30DaysExpenses?.transactions || []}
                 />
               </div>
-              <div className="transition-transform duration-500 hover:scale-[1.02]">
+              <div className="w-full transition-transform duration-500 hover:scale-[1.02]">
                 <RecentIncomeWithChart
                   data={dashbaordData?.last60DaysIncome?.transactions?.slice(0,4) || []}
                   totalIncome={dashbaordData?.last60DaysIncome?.total || 0}
                 />
               </div>
-              <div className="transition-transform duration-500 hover:scale-[1.02]">
+              <div className="w-full transition-transform duration-500 hover:scale-[1.02]">
                 <RecentIncome
                   transactions={dashbaordData?.last60DaysIncome?.transactions || []}
                   onSeeMore={() => navigate('/income')}

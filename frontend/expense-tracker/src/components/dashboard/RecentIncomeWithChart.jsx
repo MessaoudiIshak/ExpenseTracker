@@ -19,9 +19,9 @@ export default function RecentIncomeWithChart({ data, totalIncome }) {
   return (
         <div className='card'>
             <div className='flex items-center justify-between'>
-                <h5 className='text-lg'>Last 60 Days Income</h5>
+                <h5 className='text-sm sm:text-lg font-semibold truncate'>Last 60 Days Income</h5>
             </div>
-            <div className='mt-15'>
+            <div className='mt-4 sm:mt-6 w-full overflow-x-auto min-h-[280px] sm:min-h-[320px] md:min-h-[360px]'>
             <CustomPieChart
                 data={chartData}
                 label="Total Income"

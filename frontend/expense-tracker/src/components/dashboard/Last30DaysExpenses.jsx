@@ -10,11 +10,11 @@ export default function Last30DaysExpenses({ data }) {
     }, [data]);
 
     return (
-        <div className='card col-span-1'>
+        <div className='card w-full'>
             <div className='flex items-center justify-between'>
-                <h5 className='text-lg'>Last 30 Days Expenses</h5>
+                <h5 className='text-sm sm:text-lg font-semibold truncate'>Last 30 Days Expenses</h5>
             </div>
-            <div className='mt-15'>
+            <div className='mt-4 sm:mt-6 w-full overflow-x-auto'>
             <CustomBarChart data={chartData} />
             </div>
         </div>

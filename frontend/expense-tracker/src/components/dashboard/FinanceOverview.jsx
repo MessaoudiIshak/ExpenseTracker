@@ -20,11 +20,11 @@ export default function FinanceOverview({ totalBalance, totalIncome, totalExpens
   return (
     <div className='card'>
         <div className='flex items-center justify-between'>
-            <h5 text-lg>Financial Overiview</h5>
+            <h5 className='text-sm sm:text-lg font-semibold truncate'>Financial Overview</h5>
         </div>
-        <div className='mt-15'>
+        <div className='mt-4 sm:mt-6 w-full overflow-x-auto min-h-[280px] sm:min-h-[320px] md:min-h-[360px]'>
         <CustomPieChart data={balanceData} colors={COLORS} 
-        totalAmount ={`${totalBalance}`}
+        totalAmount ={`$${totalBalance}`}
         label ="Total Balance" 
         showTextAnchor/>
         </div>

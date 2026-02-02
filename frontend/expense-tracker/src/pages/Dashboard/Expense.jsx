@@ -98,19 +98,21 @@ export default function Expense() {
   }, []); // Only run on mount
   return (
     <DashboardLayout activeMenu="Expense">
-      <div className='my-5 mx-auto'>
-        <div className='grid grid-cols-1 gap-6'>
-          <div className=''>
+      <div className='w-full py-3 sm:py-5 px-2 sm:px-3 md:px-6 lg:px-8'>
+        <div className='grid grid-cols-1 gap-4 sm:gap-6 w-full'>
+          <div className='w-full'>
             <ExpenseOverview
             transactions={expenseData}
             onExpenseIncome = {() => {setOpenAddExpenseModal(true)}}
             />
           </div>
-          <ExpenseList 
-          transactions={expenseData}
-          onDelete={(id) => setOpenDeleteAlert({show: true, data: id})}
-          onDownload={handleDownloadExpenseDetails}
-          />
+          <div className='w-full'>
+            <ExpenseList 
+            transactions={expenseData}
+            onDelete={(id) => setOpenDeleteAlert({show: true, data: id})}
+            onDownload={handleDownloadExpenseDetails}
+            />
+          </div>
         
         </div>
         <Modal 

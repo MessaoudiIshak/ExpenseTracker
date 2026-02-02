@@ -39,10 +39,10 @@ export default function AddIncomeForm({ onAddIncome }) {
         placeholder=''
         type='date'
         />
-        <div className='flex justify-end mt-6'>
+        <div className='flex justify-end mt-4 sm:mt-6'>
             <button
             type='button'
-            className='add-btn add-btn-fill'
+            className='add-btn add-btn-fill text-xs sm:text-sm'
             onClick={()=>onAddIncome(income)}
             >Add Income</button>
         </div>

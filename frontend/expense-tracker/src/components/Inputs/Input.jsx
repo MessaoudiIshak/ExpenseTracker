@@ -7,12 +7,12 @@ export default function Input({value, onChange, type , placeholder, label}) {
         setShowPassword(!showPassword);
     };
   return (
-    <div >
-        <label className='text-[13px] text-slate-800'>{label}</label>
+    <div className='w-full'>
+        <label className='text-xs sm:text-[13px] text-slate-800 block'>{label}</label>
         <div className='input-box'>
             <input type={type} 
             value={value} 
-            className='w-full bg-transparent outline-none'
+            className='w-full bg-transparent outline-none text-xs sm:text-sm'
             onChange={(e) => onChange(e)}
              placeholder={placeholder} />
 
@@ -20,14 +20,14 @@ export default function Input({value, onChange, type , placeholder, label}) {
                 <>
                 {showPassword ? (
                     <FaRegEye
-                    size ={22}
-                    className='text-primary cursor-pointer'
+                    size={18}
+                    className='text-primary cursor-pointer flex-shrink-0'
                     onClick={()=> togglePasswordVisibility()}
                      />
                 ) : (
                     <FaRegEyeSlash
-                    size ={22}
-                    className='text-slate-400 cursor-pointer'
+                    size={18}
+                    className='text-slate-400 cursor-pointer flex-shrink-0'
                     onClick={()=> togglePasswordVisibility()}
                     />
                 )}

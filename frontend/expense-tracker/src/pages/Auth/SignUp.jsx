@@ -65,12 +65,12 @@ export default function SignUp() {
   };
   return (
     <AuthLayout>
-      <div className='lg:w-[100%] h-auto md:h-full mt-10 md:mt-0 flex flex-col justify-center '>
-        <h3 className='text-xl  font-semibold  text-black '>Create an Account</h3>
-        <p className='text-xs text-slate-700 mt-[5px] mb-6'>Join us today by entering your details below</p>
-        <form onSubmit={handleSignUp} >
+      <div className='w-full md:w-[90%] lg:w-[100%] h-auto md:h-full mt-4 sm:mt-6 md:mt-0 flex flex-col justify-center px-4 sm:px-0'>
+        <h3 className='text-lg sm:text-xl md:text-2xl font-semibold text-black'>Create an Account</h3>
+        <p className='text-xs sm:text-sm text-slate-700 mt-2 sm:mt-[5px] mb-4 sm:mb-6'>Join us today by entering your details below</p>
+        <form onSubmit={handleSignUp} className='w-full'>
           <ProfilePhotoSelector image={profilePic} setImage={setProfilePic} />
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+          <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full'>
             <Input
               type='text'
               value={fullName}
@@ -85,7 +85,7 @@ export default function SignUp() {
               label="Email Address"
               placeholder='john@example.com'
               />
-            <div className='col-span-2'>
+            <div className='col-span-1 sm:col-span-2'>
             <Input
               type='password'
               value={password}
@@ -98,7 +98,7 @@ export default function SignUp() {
               {error && <p className='text-red-500 text-xs pb-2.5'>{error}</p>}
                 <button type='submit' className='btn-primary '>
                 Sign up</button>
-                <p className='text-[13px] text-slate-800 mt-3'>
+                <p className='text-xs sm:text-[13px] text-slate-800 mt-3'>
                   Have an account already? <Link to="/login" className='font-medium text-primary underline'>Log In</Link>
                 </p>
         </form>

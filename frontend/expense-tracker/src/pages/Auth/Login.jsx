@@ -45,10 +45,10 @@ const handleLogin = async (e) => {
   
   return (
     <AuthLayout>
-        <div className='lg:w-[70%] h-3/4 md:h-full flex flex-col justify-center '>
-            <h3 className='text-xl font-semibold text-black'>Welcome Back!</h3>
-            <p className='text-xs text-slate-700 mt-[5px] mb-6'>Please login to your account</p>
-            <form onSubmit={handleLogin}>
+        <div className='w-full md:w-[90%] lg:w-[70%] h-auto md:h-3/4 flex flex-col justify-center px-4 sm:px-0'>
+            <h3 className='text-lg sm:text-xl md:text-2xl font-semibold text-black'>Welcome Back!</h3>
+            <p className='text-xs sm:text-sm text-slate-700 mt-2 sm:mt-[5px] mb-4 sm:mb-6'>Please login to your account</p>
+            <form onSubmit={handleLogin} className='w-full'>
                 <Input
                 type='text'
                 value={email}
@@ -66,7 +66,7 @@ const handleLogin = async (e) => {
                   {error && <p className='text-red-500 text-xs pb-2.5'>{error}</p>}
                   <button type='submit' className='btn-primary '>
                   Login</button>
-                  <p className='text-[13px] text-slate-800 mt-3'>
+                  <p className='text-xs sm:text-[13px] text-slate-800 mt-3'>
                     Don't have an account? <Link to="/signup" className='font-medium text-primary underline'>Sign Up</Link>
                   </p>
             </form>

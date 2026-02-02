@@ -3,17 +3,17 @@ import CARD_2 from '../../assets/card2.png'
 import { LuTrendingUpDown } from 'react-icons/lu'
 export default function AuthLayout({ children }) {
     return (
-        <div className="flex min-h-screen">
-            <div className="w-screen h-screen md:w-[60vw] px-6 sm:px-12 pt-8 pb-12 flex flex-col justify-center bg-gradient-to-br from-white via-violet-50 to-purple-100 relative overflow-hidden">
+        <div className="flex min-h-screen w-full flex-col md:flex-row">
+            <div className="w-full md:w-[60vw] h-auto md:h-screen px-4 sm:px-8 md:px-12 py-6 sm:py-8 md:pt-8 md:pb-12 flex flex-col justify-center bg-gradient-to-br from-white via-violet-50 to-purple-100 relative overflow-hidden">
                 {/* Animated floating coins and bills */}
                 <MoneyBackgroundSVG />
-                <h2 className="text-lg font-bold text-black z-10 relative">Expense Tracker</h2>
-                <div className="z-10 relative">{children}</div>
+                <h2 className="text-base sm:text-lg md:text-xl font-bold text-black z-10 relative mb-4 md:mb-0">Expense Tracker</h2>
+                <div className="z-10 relative min-h-[60vh] md:min-h-auto flex flex-col justify-center">{children}</div>
             </div>
-            <div className="hidden md:block w-[40vw] h-screen bg-violet-50 bg-auth-bg-img bg-cover bg-no-repeat bg-center p-8 overflow-hidden relative">
-                <div className="w-48 h-48 rounded-[40px] bg-purple-600 absolute -top-7 -left-5 animate-float-slow"></div>
-                <div className="w-48 h-56 rounded-[40px] border-[20px] border-fuchsia-600 absolute top-[30%] -right-10 animate-float-medium"></div>
-                <div className="w-48 h-48 rounded-[40px] bg-violet-500 absolute -bottom-7 -left-5 animate-float-fast"></div>
+            <div className="hidden md:block w-full md:w-[40vw] h-screen bg-violet-50 bg-auth-bg-img bg-cover bg-no-repeat bg-center p-4 sm:p-6 md:p-8 overflow-hidden relative">
+                <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-[40px] bg-purple-600 absolute -top-7 -left-5 animate-float-slow"></div>
+                <div className="w-32 h-40 sm:w-40 sm:h-48 md:w-48 md:h-56 rounded-[40px] border-[20px] border-fuchsia-600 absolute top-[30%] -right-10 animate-float-medium"></div>
+                <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-[40px] bg-violet-500 absolute -bottom-7 -left-5 animate-float-fast"></div>
                 {/* Animated floating coins and bills on right */}
                 <MoneyBackgroundSVG right />
                 <div className="grid grid-cols-1 relative z-30">
@@ -24,7 +24,7 @@ export default function AuthLayout({ children }) {
                         color="bg-primary"
                     />
                 </div>
-                <img src={CARD_2} className="w-48 md:w-60 lg:w-72 absolute bottom-10 left-6 shadow-lg shadow-blue-400/15 z-20 animate-fade-in" />
+                <img src={CARD_2} className="w-40 sm:w-48 md:w-60 lg:w-72 absolute bottom-10 left-6 shadow-lg shadow-blue-400/15 z-20 animate-fade-in" />
             </div>
         </div>
     );
